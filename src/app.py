@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
+import requests
 
 if __name__ == "__main__":
-    series = pd.Series([1, 3, 5, np.nan, 6, 8])
-    print(series)
+    r = requests.get("https://raw.github.com/avinash311/itrans/blob/master/js/data/DEFAULT.tsv")
+    print(r.headers['Content-Type'])
+    print(r.text)
